@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6750" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PerformanceViewController" customModule="KeyCheat" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelBT" destination="XTP-ju-htq" id="4ol-1k-RK4"/>
+                <outlet property="clueCollectionView" destination="2Rv-tI-rkZ" id="dLP-pW-WAU"/>
+                <outlet property="clueTimeLB" destination="Ek4-LC-8qh" id="ycH-WL-9Uj"/>
+                <outlet property="editClueBT" destination="mhw-Cw-G3Y" id="wio-nz-JNi"/>
+                <outlet property="totalTimeLB" destination="yK5-jC-OyZ" id="Cxc-bQ-ISS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1o-o0-4g7">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTP-ju-htq" userLabel="cancelButton">
+                            <rect key="frame" x="0.0" y="20" width="180" height="50"/>
+                            <color key="backgroundColor" red="0.89019607840000003" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="uWE-1c-93O"/>
+                            </constraints>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhw-Cw-G3Y" userLabel="editClueBT">
+                            <rect key="frame" x="420" y="20" width="180" height="50"/>
+                            <color key="backgroundColor" red="0.89019607840000003" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="sNi-yr-xBE"/>
+                            </constraints>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="mhw-Cw-G3Y" firstAttribute="top" secondItem="y1o-o0-4g7" secondAttribute="top" constant="20" id="6Vz-Ly-fU1"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="HQX-iZ-QrS"/>
+                        <constraint firstAttribute="trailing" secondItem="mhw-Cw-G3Y" secondAttribute="trailing" id="I28-Kr-3vf"/>
+                        <constraint firstItem="XTP-ju-htq" firstAttribute="leading" secondItem="y1o-o0-4g7" secondAttribute="leading" id="Rjj-K7-KTa"/>
+                        <constraint firstItem="XTP-ju-htq" firstAttribute="top" secondItem="y1o-o0-4g7" secondAttribute="top" constant="20" id="Z9S-o7-Zae"/>
+                        <constraint firstItem="XTP-ju-htq" firstAttribute="width" secondItem="y1o-o0-4g7" secondAttribute="width" multiplier="0.3" id="ePY-z2-8CG"/>
+                        <constraint firstAttribute="height" constant="70" id="fX5-hC-cyw"/>
+                        <constraint firstAttribute="bottom" secondItem="XTP-ju-htq" secondAttribute="bottom" id="frU-ht-Sip"/>
+                        <constraint firstItem="mhw-Cw-G3Y" firstAttribute="width" secondItem="y1o-o0-4g7" secondAttribute="width" multiplier="0.3" id="kxN-cz-Otw"/>
+                        <constraint firstAttribute="bottom" secondItem="mhw-Cw-G3Y" secondAttribute="bottom" id="lje-uc-Xxe"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK5-jC-OyZ" userLabel="totalTimeLB">
+                    <rect key="frame" x="10" y="540" width="580" height="50"/>
+                    <color key="backgroundColor" red="0.89019607840000003" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="fTT-5k-2RU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek4-LC-8qh" userLabel="clueTimeLB">
+                    <rect key="frame" x="10" y="80" width="580" height="100"/>
+                    <color key="backgroundColor" red="0.89019607840000003" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="XJl-gx-dAd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2Rv-tI-rkZ">
+                    <rect key="frame" x="10" y="190" width="580" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Jbs-aN-B4D"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hag-xf-Mhi">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ek4-LC-8qh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="1iE-jl-bSr"/>
+                <constraint firstItem="yK5-jC-OyZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="4dg-Bf-f7l"/>
+                <constraint firstItem="y1o-o0-4g7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6e1-dT-Ygo"/>
+                <constraint firstItem="2Rv-tI-rkZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="BaJ-Xs-m78"/>
+                <constraint firstAttribute="trailing" secondItem="2Rv-tI-rkZ" secondAttribute="trailing" constant="10" id="MES-fX-WCi"/>
+                <constraint firstItem="Ek4-LC-8qh" firstAttribute="top" secondItem="y1o-o0-4g7" secondAttribute="bottom" constant="10" id="OZL-RF-6EQ"/>
+                <constraint firstAttribute="trailing" secondItem="Ek4-LC-8qh" secondAttribute="trailing" constant="10" id="QNN-Pc-f3w"/>
+                <constraint firstItem="2Rv-tI-rkZ" firstAttribute="top" secondItem="Ek4-LC-8qh" secondAttribute="bottom" constant="10" id="Tfk-nf-9XL"/>
+                <constraint firstAttribute="trailing" secondItem="yK5-jC-OyZ" secondAttribute="trailing" constant="10" id="Uxy-L6-HHo"/>
+                <constraint firstAttribute="bottom" secondItem="yK5-jC-OyZ" secondAttribute="bottom" constant="10" id="axP-hP-tox"/>
+                <constraint firstAttribute="trailing" secondItem="y1o-o0-4g7" secondAttribute="trailing" id="daC-0c-hzj"/>
+                <constraint firstItem="y1o-o0-4g7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sRT-OL-uFW"/>
+            </constraints>
+            <point key="canvasLocation" x="577" y="286"/>
+        </view>
+    </objects>
+</document>
