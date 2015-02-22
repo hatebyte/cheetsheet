@@ -12,7 +12,7 @@ extension UIViewController {
     func pop(sender:UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
     }
-    
+   
     func save(sender:UIButton) {
         let presentation = self.navigationController?.viewControllers[1] as UIViewController
         self.navigationController?.popToViewController(presentation, animated: true)

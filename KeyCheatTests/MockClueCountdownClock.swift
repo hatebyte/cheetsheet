@@ -10,7 +10,9 @@ import Foundation
 
 class MockClueCountdownClock: ClueCountdownClock {
 
-     func falseStart() {
+    var didStartGetCalled = false
+   
+    func falseStart() {
         start()
         pause()
     }
@@ -26,4 +28,5 @@ class MockClueCountdownClock: ClueCountdownClock {
     func isTimerValid()->Bool {
         return timer.valid
     }
+    
 }

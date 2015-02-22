@@ -56,12 +56,10 @@ class ClueCountdownClock {
     }
     
     internal func clueFinished() {
-//        if remainingTime == 0 {
-            pause()
-            if let f = finisher {
-                f()
-            }
-//        }
+        pause()
+        if let f = finisher {
+            f()
+        }
     }
     
     internal func updateDecrementer() {
