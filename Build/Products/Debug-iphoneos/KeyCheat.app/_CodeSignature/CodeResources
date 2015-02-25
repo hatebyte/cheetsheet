@@ -13,6 +13,14 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>CompletedViewController.nib/objects-8.0+.nib</key>
+		<data>
+		8CQsEBni7DCY9tTYdXRbj+/k8wA=
+		</data>
+		<key>CompletedViewController.nib/runtime.nib</key>
+		<data>
+		zyoe7GEIS58/4T8mShGnGfvXuUU=
+		</data>
 		<key>EditClueViewController.nib/objects-8.0+.nib</key>
 		<data>
 		sLmTqBS9tddYx+5w6/XJga7BR+M=
@@ -31,39 +39,39 @@
 		</data>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
-		Mr34o9xbsf5ViCfjiVNm70/XI+E=
+		bueby/zxe02PQXv+2GAEQs2xMn0=
 		</data>
 		<key>Frameworks/libswiftCoreGraphics.dylib</key>
 		<data>
-		tRXtX6EeC3uA6hr8Cq92or8w46o=
+		tPQ2a3VTf49WLUx17piATIY42u8=
 		</data>
 		<key>Frameworks/libswiftCoreImage.dylib</key>
 		<data>
-		WIseFdoPt2CXD9odC7fHtQu7k6E=
+		yQf/mTxcEiBa3/JFCUmysQ7/0ak=
 		</data>
 		<key>Frameworks/libswiftDarwin.dylib</key>
 		<data>
-		80xDkrCe7SEp2htQYL1yDj5M8HI=
+		xVzIrZDMsGa+LJ7cUbL7/e6pzYM=
 		</data>
 		<key>Frameworks/libswiftDispatch.dylib</key>
 		<data>
-		2h8724xKNr//SsRDtikB1WgBIIQ=
+		hKpE9FWMdp3t6nlpFFv5bqx/mHg=
 		</data>
 		<key>Frameworks/libswiftFoundation.dylib</key>
 		<data>
-		hUnTJL2FXCoiHyzL7Snt+0fP2G8=
+		sVckfPIoFivdKNR+GJYysyC26gc=
 		</data>
 		<key>Frameworks/libswiftObjectiveC.dylib</key>
 		<data>
-		a69RXIkcMkPf0xV9mwc48EUaHmM=
+		uQvmw3x68Q7kfAw5HZR4AT2ls40=
 		</data>
 		<key>Frameworks/libswiftSecurity.dylib</key>
 		<data>
-		NAP0U7MF6PCt0WNQD8esPEfs1II=
+		GLmJm8BLSS+/RMcApYceTNvXBho=
 		</data>
 		<key>Frameworks/libswiftUIKit.dylib</key>
 		<data>
-		HnBkb+uBxCiZA8jX5rVMqv/3bAU=
+		q81Vf3QhT1jkJwhZBE/BFcProhQ=
 		</data>
 		<key>HomeViewController.nib/objects-8.0+.nib</key>
 		<data>
@@ -77,13 +85,21 @@
 		<data>
 		9Zx/KOyH7ulI7BiFsF133lH9wzg=
 		</data>
+		<key>PerformanceCollectionViewCell.nib/objects-8.0+.nib</key>
+		<data>
+		ShSg9M6znWWo+VAmvByFWkSKv4k=
+		</data>
+		<key>PerformanceCollectionViewCell.nib/objects.nib</key>
+		<data>
+		IA2pyz0HrvUgpz4vgMkyfB5BGYg=
+		</data>
 		<key>PerformanceViewController.nib/objects-8.0+.nib</key>
 		<data>
-		82ojZE5xxdQONkZnsurLJ0P/VIU=
+		3R+NRAUKe7Fdzr0Mx1zSNTMdwdM=
 		</data>
 		<key>PerformanceViewController.nib/runtime.nib</key>
 		<data>
-		BEs480lpO+baw64J1Tszf/2a9qs=
+		NdmKb4MFu0Jqo8SuqQKbNqDoSng=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -109,6 +125,14 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>CompletedViewController.nib/objects-8.0+.nib</key>
+		<data>
+		8CQsEBni7DCY9tTYdXRbj+/k8wA=
+		</data>
+		<key>CompletedViewController.nib/runtime.nib</key>
+		<data>
+		zyoe7GEIS58/4T8mShGnGfvXuUU=
+		</data>
 		<key>EditClueViewController.nib/objects-8.0+.nib</key>
 		<data>
 		sLmTqBS9tddYx+5w6/XJga7BR+M=
@@ -127,39 +151,39 @@
 		</data>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
-		Mr34o9xbsf5ViCfjiVNm70/XI+E=
+		bueby/zxe02PQXv+2GAEQs2xMn0=
 		</data>
 		<key>Frameworks/libswiftCoreGraphics.dylib</key>
 		<data>
-		tRXtX6EeC3uA6hr8Cq92or8w46o=
+		tPQ2a3VTf49WLUx17piATIY42u8=
 		</data>
 		<key>Frameworks/libswiftCoreImage.dylib</key>
 		<data>
-		WIseFdoPt2CXD9odC7fHtQu7k6E=
+		yQf/mTxcEiBa3/JFCUmysQ7/0ak=
 		</data>
 		<key>Frameworks/libswiftDarwin.dylib</key>
 		<data>
-		80xDkrCe7SEp2htQYL1yDj5M8HI=
+		xVzIrZDMsGa+LJ7cUbL7/e6pzYM=
 		</data>
 		<key>Frameworks/libswiftDispatch.dylib</key>
 		<data>
-		2h8724xKNr//SsRDtikB1WgBIIQ=
+		hKpE9FWMdp3t6nlpFFv5bqx/mHg=
 		</data>
 		<key>Frameworks/libswiftFoundation.dylib</key>
 		<data>
-		hUnTJL2FXCoiHyzL7Snt+0fP2G8=
+		sVckfPIoFivdKNR+GJYysyC26gc=
 		</data>
 		<key>Frameworks/libswiftObjectiveC.dylib</key>
 		<data>
-		a69RXIkcMkPf0xV9mwc48EUaHmM=
+		uQvmw3x68Q7kfAw5HZR4AT2ls40=
 		</data>
 		<key>Frameworks/libswiftSecurity.dylib</key>
 		<data>
-		NAP0U7MF6PCt0WNQD8esPEfs1II=
+		GLmJm8BLSS+/RMcApYceTNvXBho=
 		</data>
 		<key>Frameworks/libswiftUIKit.dylib</key>
 		<data>
-		HnBkb+uBxCiZA8jX5rVMqv/3bAU=
+		q81Vf3QhT1jkJwhZBE/BFcProhQ=
 		</data>
 		<key>HomeViewController.nib/objects-8.0+.nib</key>
 		<data>
@@ -169,13 +193,21 @@
 		<data>
 		KPtDSnBn3hOjPjqaTAxtjthVIvA=
 		</data>
+		<key>PerformanceCollectionViewCell.nib/objects-8.0+.nib</key>
+		<data>
+		ShSg9M6znWWo+VAmvByFWkSKv4k=
+		</data>
+		<key>PerformanceCollectionViewCell.nib/objects.nib</key>
+		<data>
+		IA2pyz0HrvUgpz4vgMkyfB5BGYg=
+		</data>
 		<key>PerformanceViewController.nib/objects-8.0+.nib</key>
 		<data>
-		82ojZE5xxdQONkZnsurLJ0P/VIU=
+		3R+NRAUKe7Fdzr0Mx1zSNTMdwdM=
 		</data>
 		<key>PerformanceViewController.nib/runtime.nib</key>
 		<data>
-		BEs480lpO+baw64J1Tszf/2a9qs=
+		NdmKb4MFu0Jqo8SuqQKbNqDoSng=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>

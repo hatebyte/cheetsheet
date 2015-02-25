@@ -11,7 +11,7 @@ import Foundation
 typealias ClueFinished = ()->()
 typealias Updator = ()->()
 
-class ClueCountdownClock {
+class ClueCountdownClock:NSObject {
 
     var clue:Clue!
     var finisher:ClueFinished?
@@ -19,28 +19,29 @@ class ClueCountdownClock {
     internal var timer:NSTimer!
     internal var decrementer:Decrementer!
     
-    
     init(clue:Clue) {
         self.clue               = clue
+        self.decrementer        = Decrementer(top: self.clue.time, decreaser:1)
     }
    
     // MARK: Public
     func start() {
-        self.decrementer        = Decrementer(top: self.clue.time, decreaser:1)
         decrementer.finished    = clueFinished
         timer                   = makeTimer()
+        if let u = updator {
+            u()
+        }
     }
     
     func pause() {
-        timer.invalidate()
+        if let t  = timer {
+            t.invalidate()
+        }
+        timer                   = nil
     }
     
     func resume() {
         timer                   = makeTimer()
-    }
-    
-    func restart() {
-        self.start()
     }
     
     // MARK: Get
@@ -52,19 +53,20 @@ class ClueCountdownClock {
    
     // MARK: Private
     internal func makeTimer()->NSTimer {
-        return NSTimer(timeInterval: 1.0, target: self, selector: "updateDecrementer", userInfo: nil, repeats:true)
+        return NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"updateDecrementer", userInfo: nil, repeats: true)
     }
     
     internal func clueFinished() {
         pause()
+        decrementer.invalidate()
         if let f = finisher {
             f()
         }
     }
     
     internal func updateDecrementer() {
-        if remainingTime > 0 {
-            decrementer.update()
+        decrementer.update()
+        if decrementer.val >= 0 {
             if let u = updator {
                 u()
             }

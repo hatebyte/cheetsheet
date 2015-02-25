@@ -29,13 +29,13 @@ class ClueCountDownTests: XCTestCase {
 
     func testClueCountdownReturnsRemainingTime() {
         mockClueCoundownClock.falseStart()
-        XCTAssert(mockClueCoundownClock.remainingTime == 15, "The remaining time of clueCoundownClock should be 15")
+        XCTAssert(mockClueCoundownClock.remainingTime == 14, "The remaining time of clueCoundownClock should be 14")
     }
     
     func testClueCountdownReturnsRemainingTimeAfterUpdate() {
         mockClueCoundownClock.falseStart()
         mockClueCoundownClock.triggerUpdate()
-        XCTAssert(mockClueCoundownClock.remainingTime == 14, "The remaining time of clueCoundownClock should be 14")
+        XCTAssert(mockClueCoundownClock.remainingTime == 13, "The remaining time of clueCoundownClock should be 13")
     }
    
     func testPauseStartHasValidTimer() {
@@ -64,12 +64,12 @@ class ClueCountDownTests: XCTestCase {
         mockClueCoundownClock.updator = {
             updateVal += 1
         }
-        
+
         mockClueCoundownClock.falseStart()
         for _ in 0...100 {
             mockClueCoundownClock.triggerUpdate()
         }
-
+        println(updateVal)
         XCTAssert(updateVal == 15, "The updator function should have been called only 15 times")
  
     }
@@ -84,7 +84,7 @@ class ClueCountDownTests: XCTestCase {
         for _ in 0...100 {
             mockClueCoundownClock.triggerUpdate()
         }
-        println(finishedVal)
+
         XCTAssert(finishedVal == 1, "The finisher function should have been called 1 time")
         
     }

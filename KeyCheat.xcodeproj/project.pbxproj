@@ -8,14 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		7BF259A684937C9A9B876082 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE3B43B36BEA86550A4935F /* libPods.a */; };
+		D20452D21A9BF6FC00BA3532 /* PerformanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20452D01A9BF6FC00BA3532 /* PerformanceCollectionViewCell.swift */; };
+		D20452D31A9BF6FC00BA3532 /* PerformanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20452D01A9BF6FC00BA3532 /* PerformanceCollectionViewCell.swift */; };
+		D20452D41A9BF6FC00BA3532 /* PerformanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20452D11A9BF6FC00BA3532 /* PerformanceCollectionViewCell.xib */; };
+		D20452D51A9BF6FC00BA3532 /* PerformanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20452D11A9BF6FC00BA3532 /* PerformanceCollectionViewCell.xib */; };
+		D20452D71A9BF7BD00BA3532 /* ClueCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20452D61A9BF7BD00BA3532 /* ClueCollectionViewDelegate.swift */; };
+		D20452D81A9BF7BD00BA3532 /* ClueCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20452D61A9BF7BD00BA3532 /* ClueCollectionViewDelegate.swift */; };
+		D25B76E11A9D280D001E13C4 /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B76DF1A9D280D001E13C4 /* CompletedViewController.swift */; };
+		D25B76E21A9D280D001E13C4 /* CompletedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25B76E01A9D280D001E13C4 /* CompletedViewController.xib */; };
 		D29AE4F01A9A40920063F93E /* PresentationExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4EF1A9A40920063F93E /* PresentationExtensionTests.swift */; };
 		D29AE4F21A9A5CDC0063F93E /* MockPresentationPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4F11A9A5CDC0063F93E /* MockPresentationPerformer.swift */; };
 		D29AE4F51A9A6AEE0063F93E /* FakePerfomanceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4F41A9A6AEE0063F93E /* FakePerfomanceDelegate.swift */; };
 		D29AE4F71A9A6D8D0063F93E /* TestClockFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4F61A9A6D8D0063F93E /* TestClockFormatter.swift */; };
 		D29AE4FA1A9A6DA20063F93E /* ClockFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4F91A9A6DA20063F93E /* ClockFormatter.swift */; };
 		D29AE4FB1A9A6F580063F93E /* ClockFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4F91A9A6DA20063F93E /* ClockFormatter.swift */; };
-		D29AE4FD1A9A70BC0063F93E /* PerformanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4FC1A9A70BC0063F93E /* PerformanceViewModel.swift */; };
-		D29AE4FE1A9A716A0063F93E /* PerformanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4FC1A9A70BC0063F93E /* PerformanceViewModel.swift */; };
+		D29AE4FD1A9A70BC0063F93E /* PerformanceViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4FC1A9A70BC0063F93E /* PerformanceViewPresenter.swift */; };
+		D29AE4FE1A9A716A0063F93E /* PerformanceViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4FC1A9A70BC0063F93E /* PerformanceViewPresenter.swift */; };
+		D29AE5001A9A98460063F93E /* TestPerformancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE4FF1A9A98460063F93E /* TestPerformancePresenter.swift */; };
 		D2CE7BD21A991B2700E862CB /* MockClueCountdownClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE7BD11A991B2700E862CB /* MockClueCountdownClock.swift */; };
 		D2CE7BD41A99337700E862CB /* PresentationPerformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE7BD31A99337700E862CB /* PresentationPerformerTests.swift */; };
 		D2CE7BD71A99339B00E862CB /* PresentationPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE7BD61A99339B00E862CB /* PresentationPerformer.swift */; };
@@ -56,12 +65,18 @@
 /* Begin PBXFileReference section */
 		22A2B1B2D7236269C308CB14 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		792458AAC39A4DFFB6B29A69 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D20452D01A9BF6FC00BA3532 /* PerformanceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceCollectionViewCell.swift; sourceTree = "<group>"; };
+		D20452D11A9BF6FC00BA3532 /* PerformanceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerformanceCollectionViewCell.xib; sourceTree = "<group>"; };
+		D20452D61A9BF7BD00BA3532 /* ClueCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		D25B76DF1A9D280D001E13C4 /* CompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
+		D25B76E01A9D280D001E13C4 /* CompletedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedViewController.xib; sourceTree = "<group>"; };
 		D29AE4EF1A9A40920063F93E /* PresentationExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationExtensionTests.swift; sourceTree = "<group>"; };
 		D29AE4F11A9A5CDC0063F93E /* MockPresentationPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPresentationPerformer.swift; sourceTree = "<group>"; };
 		D29AE4F41A9A6AEE0063F93E /* FakePerfomanceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakePerfomanceDelegate.swift; sourceTree = "<group>"; };
 		D29AE4F61A9A6D8D0063F93E /* TestClockFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClockFormatter.swift; sourceTree = "<group>"; };
 		D29AE4F91A9A6DA20063F93E /* ClockFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFormatter.swift; sourceTree = "<group>"; };
-		D29AE4FC1A9A70BC0063F93E /* PerformanceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceViewModel.swift; sourceTree = "<group>"; };
+		D29AE4FC1A9A70BC0063F93E /* PerformanceViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceViewPresenter.swift; sourceTree = "<group>"; };
+		D29AE4FF1A9A98460063F93E /* TestPerformancePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPerformancePresenter.swift; sourceTree = "<group>"; };
 		D2CE7BD11A991B2700E862CB /* MockClueCountdownClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockClueCountdownClock.swift; sourceTree = "<group>"; };
 		D2CE7BD31A99337700E862CB /* PresentationPerformerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationPerformerTests.swift; sourceTree = "<group>"; };
 		D2CE7BD61A99339B00E862CB /* PresentationPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationPerformer.swift; sourceTree = "<group>"; };
@@ -126,6 +141,44 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D20452CE1A9BF6AA00BA3532 /* Performance */ = {
+			isa = PBXGroup;
+			children = (
+				D2CE7BD51A99338400E862CB /* Performer */,
+				D2ED91FF1A980DE30025ABA8 /* ClueCountDownClock */,
+				D2ED91F11A9807470025ABA8 /* Decrementer */,
+			);
+			name = Performance;
+			sourceTree = "<group>";
+		};
+		D20452CF1A9BF6BE00BA3532 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D20452D01A9BF6FC00BA3532 /* PerformanceCollectionViewCell.swift */,
+				D20452D11A9BF6FC00BA3532 /* PerformanceCollectionViewCell.xib */,
+				D20452D61A9BF7BD00BA3532 /* ClueCollectionViewDelegate.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		D25B76DD1A9D27E4001E13C4 /* PerformanceScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D2F059A01A96C9560094965C /* PerformanceViewController.swift */,
+				D2F059A11A96C9560094965C /* PerformanceViewController.xib */,
+			);
+			name = PerformanceScreen;
+			sourceTree = "<group>";
+		};
+		D25B76DE1A9D27F4001E13C4 /* CompletedScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D25B76DF1A9D280D001E13C4 /* CompletedViewController.swift */,
+				D25B76E01A9D280D001E13C4 /* CompletedViewController.xib */,
+			);
+			name = CompletedScreen;
+			sourceTree = "<group>";
+		};
 		D29AE4F31A9A6AD90063F93E /* fakes */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				D2CE7BD61A99339B00E862CB /* PresentationPerformer.swift */,
-				D29AE4FC1A9A70BC0063F93E /* PerformanceViewModel.swift */,
+				D29AE4FC1A9A70BC0063F93E /* PerformanceViewPresenter.swift */,
 			);
 			name = Performer;
 			sourceTree = "<group>";
@@ -240,6 +293,7 @@
 				D2CE7BD31A99337700E862CB /* PresentationPerformerTests.swift */,
 				D29AE4EF1A9A40920063F93E /* PresentationExtensionTests.swift */,
 				D29AE4F61A9A6D8D0063F93E /* TestClockFormatter.swift */,
+				D29AE4FF1A9A98460063F93E /* TestPerformancePresenter.swift */,
 			);
 			path = KeyCheatTests;
 			sourceTree = "<group>";
@@ -276,11 +330,10 @@
 		D2F059A61A96C96F0094965C /* Perform */ = {
 			isa = PBXGroup;
 			children = (
-				D2CE7BD51A99338400E862CB /* Performer */,
-				D2ED91FF1A980DE30025ABA8 /* ClueCountDownClock */,
-				D2ED91F11A9807470025ABA8 /* Decrementer */,
-				D2F059A01A96C9560094965C /* PerformanceViewController.swift */,
-				D2F059A11A96C9560094965C /* PerformanceViewController.xib */,
+				D25B76DE1A9D27F4001E13C4 /* CompletedScreen */,
+				D25B76DD1A9D27E4001E13C4 /* PerformanceScreen */,
+				D20452CF1A9BF6BE00BA3532 /* UI */,
+				D20452CE1A9BF6AA00BA3532 /* Performance */,
 			);
 			name = Perform;
 			sourceTree = "<group>";
@@ -368,9 +421,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25B76E21A9D280D001E13C4 /* CompletedViewController.xib in Resources */,
 				D2F0599B1A96C9260094965C /* EditPresentationViewController.xib in Resources */,
 				D2F059971A96C8DD0094965C /* EditClueViewController.xib in Resources */,
 				D2F0594B1A96B30D0094965C /* LaunchScreen.xib in Resources */,
+				D20452D41A9BF6FC00BA3532 /* PerformanceCollectionViewCell.xib in Resources */,
 				D2F059481A96B30D0094965C /* Images.xcassets in Resources */,
 				D2F0599F1A96C9430094965C /* HomeViewController.xib in Resources */,
 				D2F059A31A96C9560094965C /* PerformanceViewController.xib in Resources */,
@@ -381,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20452D51A9BF6FC00BA3532 /* PerformanceCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,12 +483,15 @@
 				D2F059AC1A96CFDC0094965C /* ViewController.swift in Sources */,
 				D2F0599E1A96C9430094965C /* HomeViewController.swift in Sources */,
 				D2F059961A96C8DD0094965C /* EditClueViewController.swift in Sources */,
+				D25B76E11A9D280D001E13C4 /* CompletedViewController.swift in Sources */,
 				D2F0599A1A96C9260094965C /* EditPresentationViewController.swift in Sources */,
 				D2ED91FE1A980DDE0025ABA8 /* ClueCountdownClock.swift in Sources */,
+				D20452D21A9BF6FC00BA3532 /* PerformanceCollectionViewCell.swift in Sources */,
 				D2ED91F91A980C460025ABA8 /* Entities.swift in Sources */,
 				D2F059411A96B30D0094965C /* AppDelegate.swift in Sources */,
-				D29AE4FD1A9A70BC0063F93E /* PerformanceViewModel.swift in Sources */,
+				D29AE4FD1A9A70BC0063F93E /* PerformanceViewPresenter.swift in Sources */,
 				D2F059A21A96C9560094965C /* PerformanceViewController.swift in Sources */,
+				D20452D71A9BF7BD00BA3532 /* ClueCollectionViewDelegate.swift in Sources */,
 				D29AE4FA1A9A6DA20063F93E /* ClockFormatter.swift in Sources */,
 				D2CE7BD71A99339B00E862CB /* PresentationPerformer.swift in Sources */,
 				D2ED91F31A9807680025ABA8 /* Decrementer.swift in Sources */,
@@ -444,9 +503,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2CE7BD41A99337700E862CB /* PresentationPerformerTests.swift in Sources */,
-				D29AE4FE1A9A716A0063F93E /* PerformanceViewModel.swift in Sources */,
+				D29AE4FE1A9A716A0063F93E /* PerformanceViewPresenter.swift in Sources */,
 				D2CE7BD21A991B2700E862CB /* MockClueCountdownClock.swift in Sources */,
+				D29AE5001A9A98460063F93E /* TestPerformancePresenter.swift in Sources */,
+				D20452D31A9BF6FC00BA3532 /* PerformanceCollectionViewCell.swift in Sources */,
 				D29AE4F01A9A40920063F93E /* PresentationExtensionTests.swift in Sources */,
+				D20452D81A9BF7BD00BA3532 /* ClueCollectionViewDelegate.swift in Sources */,
 				D2ED91FB1A980D350025ABA8 /* ClueCountDownTests.swift in Sources */,
 				D2ED92011A980DFD0025ABA8 /* ClueCountdownClock.swift in Sources */,
 				D2ED91FC1A980D3A0025ABA8 /* Entities.swift in Sources */,

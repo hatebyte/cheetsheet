@@ -18,6 +18,7 @@ class MockPresentationPerformer: PresentationPerformer {
 
     override func start() {
         currentClueCountdownClock.falseStart()
+        clueCountDownUpdate()
     }
     
     func getClueCoundownClock()->MockClueCountdownClock {

@@ -40,4 +40,10 @@ extension Presentation {
         }
     }
     
+    func cluesData()->[String] {
+        return self.clues.map { (c:Clue)->String in
+            return c.data
+        }
+    }
+    
 }

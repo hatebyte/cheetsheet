@@ -45,5 +45,11 @@ class PresentationExtensionTests: XCTestCase {
     func testPresentationTotalTimeLeftGiveBackCorrectTimeForStep() {
         XCTAssert(self.presentation.totalTimeLeft(5) == 90, "The presentation last time should be 90")
     }
- 
+
+    func testPresentationCluesdata() {
+        let arr = self.presentation.cluesData()
+        XCTAssert(arr[3] == "Clue number 3", "The arr index 2 should be 'Clue number 3'")
+        XCTAssert(arr[5] == "Clue number 5", "The arr index 2 should be 'Clue number 5'")
+        XCTAssert(arr[0] == "Clue number 0", "The arr index 2 should be 'Clue number 0'")
+    }
 }

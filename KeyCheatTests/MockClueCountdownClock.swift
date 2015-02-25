@@ -26,7 +26,10 @@ class MockClueCountdownClock: ClueCountdownClock {
     }
     
     func isTimerValid()->Bool {
-        return timer.valid
+        if let t = timer {
+            return timer.valid
+        }
+        return false
     }
     
 }

@@ -25,8 +25,8 @@ class DecrementerTests: XCTestCase {
         let decrementer = Decrementer(top: 100, decreaser: 1) {
         }
         
-        XCTAssert(decrementer.top == 100, "The decrementer top should be 100")
-        XCTAssert(decrementer.val == 100, "The decrementer top should be 100")
+        XCTAssert(decrementer.top == 99, "The decrementer top should be 99")
+        XCTAssert(decrementer.val == 99, "The decrementer top should be 99")
         XCTAssert(decrementer.decreaser == 1, "The decrementer top should be 1")
     }
 
@@ -36,7 +36,7 @@ class DecrementerTests: XCTestCase {
         
         decrementer.update()
         
-        XCTAssert(decrementer.val == 99, "The decrementer top should be 99")
+        XCTAssert(decrementer.val == 98, "The decrementer top should be 98")
     }
 
     
@@ -45,7 +45,7 @@ class DecrementerTests: XCTestCase {
         let decrementer = Decrementer(top: 100, decreaser: 1) {
             isFinished = true
         }
-        for _ in 0...100 {
+        for _ in 0...99 {
             decrementer.update()
         }
         

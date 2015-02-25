@@ -11,14 +11,18 @@ import Foundation
 class FakePerfomanceDelegate: NSObject, PresentationPerformerDelegate {
     
     var isPresentationComplete = false
+    var newClueIndex:Int = 0
     
-    func update(performanceData:PerformanceData) {
+    func update(performanceData:PerformanceViewPresenter) {
+        newClueIndex = performanceData.index
     }
     
-    func clueCompleted(performanceData:PerformanceData) {
+    func clueStarted(performancePresenter:PerformanceViewPresenter) {}
+    
+    func clueCompleted(performanceData:PerformanceViewPresenter) {
     }
     
-    func presentationCompleted(performanceData:PerformanceData) {
+    func presentationCompleted(performanceData:PerformanceViewPresenter) {
         isPresentationComplete = true
     }
 

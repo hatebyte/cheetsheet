@@ -42,15 +42,23 @@ class PresentationPerformerTests: XCTestCase {
         XCTAssert(self.presentationPerformer.currentClueIndex == 0, "The presentationPerformacne clueIndex should be 0")
         XCTAssert(self.presentationPerformer.currentClueCountdownClock.clue.data == "Clue number 0", "The presentationPerformacne currentClue be 'Clue number 0'")
     }
-    
+   
+    func testPresentationDataStart() {
+        let pvm = presentationPerformer.performanceData!
+        XCTAssert(pvm.clueData == "Clue number 0", "The pvm clueData should be 'Clue number 0'")
+        XCTAssert(pvm.clueIndex == 0, "The pvm clueIndex should be 0")
+        XCTAssert(pvm.remainingClueTime == 9, "The pvm clueIndex should be 9")
+        XCTAssert(pvm.remainingPerformanceTime == 149, "The pvm clueIndex should be 149")
+    }
+
     func testPresentationDataAfterFirstTimerExecutes() {
         self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
         
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 0", "The pvm clueData should be 'Clue number 0'")
         XCTAssert(pvm.clueIndex == 0, "The pvm clueIndex should be 0")
-        XCTAssert(pvm.remainingClueTime == 9, "The pvm clueIndex should be 9")
-        XCTAssert(pvm.remainingPerformanceTime == 149, "The pvm clueIndex should be 149")
+        XCTAssert(pvm.remainingClueTime == 8, "The pvm clueIndex should be 8")
+        XCTAssert(pvm.remainingPerformanceTime == 148, "The pvm clueIndex should be 148")
     }
     
     func testPresentationDataAfterSecondTimerExecutes() {
@@ -60,8 +68,8 @@ class PresentationPerformerTests: XCTestCase {
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 0", "The pvm clueData should be 'Clue number 0'")
         XCTAssert(pvm.clueIndex == 0, "The pvm clueIndex should be 0")
-        XCTAssert(pvm.remainingClueTime == 8, "The pvm clueIndex should be 8")
-        XCTAssert(pvm.remainingPerformanceTime == 148, "The pvm clueIndex should be 148")
+        XCTAssert(pvm.remainingClueTime == 7, "The pvm clueIndex should be 7")
+        XCTAssert(pvm.remainingPerformanceTime == 147, "The pvm clueIndex should be 147")
     }
    
     func testPresentationDataAfter9TimersExecute() {
@@ -72,8 +80,8 @@ class PresentationPerformerTests: XCTestCase {
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 0", "The pvm clueData should be 'Clue number 0'")
         XCTAssert(pvm.clueIndex == 0, "The pvm clueIndex should be 0")
-        XCTAssert(pvm.remainingClueTime == 1, "The pvm clueIndex should be 1")
-        XCTAssert(pvm.remainingPerformanceTime == 141, "The pvm clueIndex should be 141")
+        XCTAssert(pvm.remainingClueTime == 0, "The pvm clueIndex should be 0")
+        XCTAssert(pvm.remainingPerformanceTime == 140, "The pvm clueIndex should be 140")
     }
     
     func testPresentationDataAfterTenTimersExecute() {
@@ -84,8 +92,8 @@ class PresentationPerformerTests: XCTestCase {
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 1", "The pvm clueData should be 'Clue number 1'")
         XCTAssert(pvm.clueIndex == 1, "The pvm clueIndex should be 0")
-        XCTAssert(pvm.remainingClueTime == 10, "The pvm clueIndex should be 10")
-        XCTAssert(pvm.remainingPerformanceTime == 140, "The pvm clueIndex should be 140")
+        XCTAssert(pvm.remainingClueTime == 9, "The pvm clueIndex should be 9")
+        XCTAssert(pvm.remainingPerformanceTime == 139, "The pvm clueIndex should be 139")
     }
     
     func testPresentationDataAfterElevenTimersExecute() {
@@ -96,8 +104,8 @@ class PresentationPerformerTests: XCTestCase {
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 1", "The pvm clueData should be 'Clue number 1'")
         XCTAssert(pvm.clueIndex == 1, "The pvm clueIndex should be 1")
-        XCTAssert(pvm.remainingClueTime == 9, "The pvm clueIndex should be 9")
-        XCTAssert(pvm.remainingPerformanceTime == 139, "The pvm clueIndex should be 139")
+        XCTAssert(pvm.remainingClueTime == 8, "The pvm clueIndex should be 8")
+        XCTAssert(pvm.remainingPerformanceTime == 138, "The pvm clueIndex should be 138")
     }
     
     func testPresentationDataAfter149TimersExecute() {
@@ -108,8 +116,8 @@ class PresentationPerformerTests: XCTestCase {
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 14", "The pvm clueData should be 'Clue number 14'")
         XCTAssert(pvm.clueIndex == 14, "The pvm clueIndex should be 1")
-        XCTAssert(pvm.remainingClueTime == 1, "The pvm clueIndex should be 1")
-        XCTAssert(pvm.remainingPerformanceTime == 1, "The pvm clueIndex should be 1")
+        XCTAssert(pvm.remainingClueTime == 0, "The pvm clueIndex should be 0")
+        XCTAssert(pvm.remainingPerformanceTime == 0, "The pvm clueIndex should be 0")
     }
 
     func testPresentationDataAfter150TimersExecute() {
@@ -119,10 +127,11 @@ class PresentationPerformerTests: XCTestCase {
         
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 14", "The pvm clueData should be 'Clue number 14'")
-        XCTAssert(pvm.clueIndex == 14, "The pvm clueIndex should be 1")
-        XCTAssert(pvm.remainingClueTime == 0, "The pvm clueIndex should be 0")
-        XCTAssert(pvm.remainingPerformanceTime == 0, "The pvm clueIndex should be 0")
-        
+        XCTAssert(pvm.clueIndex == 14, "The pvm clueIndex should be 14")
+        XCTAssert(pvm.remainingClueTime == -1, "The pvm clueIndex should be 0")
+        XCTAssert(pvm.remainingPerformanceTime == -1, "The pvm clueIndex should be 0")
+        println(pvm.remainingClueTime)
+        println(pvm.remainingPerformanceTime)
         XCTAssert(fakeDelegate.isPresentationComplete, "The presentation should have fired its completed presentationCompleted")
     }
     
@@ -134,14 +143,70 @@ class PresentationPerformerTests: XCTestCase {
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 14", "The pvm clueData should be 'Clue number 14'")
         XCTAssert(pvm.clueIndex == 14, "The pvm clueIndex should be 1")
-        XCTAssert(pvm.remainingClueTime == 0, "The pvm clueIndex should be 0")
-        XCTAssert(pvm.remainingPerformanceTime == 0, "The pvm clueIndex should be 0")
-        
+        XCTAssert(pvm.remainingClueTime == -1, "The pvm clueIndex should be -1")
+        XCTAssert(pvm.remainingPerformanceTime == -1, "The pvm clueIndex should be -1")
+        println(pvm.remainingClueTime)
+        println(pvm.remainingPerformanceTime)
         XCTAssert(fakeDelegate.isPresentationComplete, "The presentation should have fired its completed presentationCompleted")
     }
+   
+    func testPerformanceCanRequestStepToStartOn() {
+        // start presentation
     
-
-
+        for _ in 0..<3 {
+            self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+        }
+        
+        self.presentationPerformer.setCurrentClue(10)
+        self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+        let pvm = presentationPerformer.performanceData!
+        
+        XCTAssert(pvm.clueData == "Clue number 10", "The pvm clueData should be 'Clue number 10'")
+        XCTAssert(pvm.clueIndex == 10, "The pvm clueIndex should be 10")
+        XCTAssert(pvm.remainingClueTime == 8, "The pvm clueIndex should be 8")
+        XCTAssert(pvm.remainingPerformanceTime == 48, "The pvm clueIndex should be 48")
+        XCTAssert(fakeDelegate.newClueIndex == 10, "The presentation should be at clue 10")
+    }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

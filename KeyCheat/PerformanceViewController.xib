@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6750" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -57,6 +58,11 @@
                         <constraint firstItem="mhw-Cw-G3Y" firstAttribute="width" secondItem="y1o-o0-4g7" secondAttribute="width" multiplier="0.3" id="kxN-cz-Otw"/>
                         <constraint firstAttribute="bottom" secondItem="mhw-Cw-G3Y" secondAttribute="bottom" id="lje-uc-Xxe"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="HQX-iZ-QrS"/>
+                        </mask>
+                    </variation>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK5-jC-OyZ" userLabel="totalTimeLB">
                     <rect key="frame" x="10" y="540" width="580" height="50"/>
@@ -64,7 +70,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="fTT-5k-2RU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -74,16 +80,17 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="XJl-gx-dAd"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2Rv-tI-rkZ">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2Rv-tI-rkZ">
                     <rect key="frame" x="10" y="190" width="580" height="100"/>
+                    <color key="backgroundColor" red="0.89019607840000003" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="Jbs-aN-B4D"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hag-xf-Mhi">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rNA-OJ-7VW">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -106,7 +113,7 @@
                 <constraint firstAttribute="trailing" secondItem="y1o-o0-4g7" secondAttribute="trailing" id="daC-0c-hzj"/>
                 <constraint firstItem="y1o-o0-4g7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sRT-OL-uFW"/>
             </constraints>
-            <point key="canvasLocation" x="577" y="286"/>
+            <point key="canvasLocation" x="12" y="260"/>
         </view>
     </objects>
 </document>
