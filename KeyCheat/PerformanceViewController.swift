@@ -38,10 +38,10 @@ class PerformanceViewController: UIViewController, PresentationPerformerDelegate
 
         for i in 0...c {
             var t:Int                           = random() % 6 + 3
-            let c                               = Clue(time:t, data: "Clue number \(i+1)", performanceIndex:i)
+            let c                               = Clue(id:i, time:t, data: "Clue number \(i+1)", performanceIndex:i)
             clues += [c]
         }
-        let presentation                        = Presentation(clues: clues, isDraft: false)
+        let presentation                        = Presentation(id:1, clues:clues, isDraft: false)
         self.presentationPerformer              = PresentationPerformer(presentation: presentation)
         self.presentationPerformer.delegate     = self
 

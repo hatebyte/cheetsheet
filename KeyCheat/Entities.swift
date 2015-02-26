@@ -9,12 +9,14 @@
 import Foundation
 
 struct Clue {
+    let id:Int
     let time:Int
     let data:String
     let performanceIndex:Int
 }
 
 struct Presentation {
+    let id:Int
     let clues:[Clue]
     let isDraft:Bool
 }

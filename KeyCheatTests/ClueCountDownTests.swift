@@ -16,7 +16,7 @@ class ClueCountDownTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        clue = Clue(time: 15, data: "This is a clue", performanceIndex: 0)
+        clue = Clue(id:1, time: 15, data: "This is a clue", performanceIndex: 0)
         mockClueCoundownClock = MockClueCountdownClock(clue: clue)
     }
     

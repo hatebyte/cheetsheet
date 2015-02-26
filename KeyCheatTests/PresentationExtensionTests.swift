@@ -18,10 +18,10 @@ class PresentationExtensionTests: XCTestCase {
         
         var clues = [Clue]()
         for i in 0..<15 {
-            let c = Clue(time:10, data: "Clue number \(i)", performanceIndex:i)
+            let c = Clue(id:i, time:10, data: "Clue number \(i)", performanceIndex:i)
             clues += [c]
         }
-        self.presentation = Presentation(clues: clues, isDraft: false)
+        self.presentation = Presentation(id:1, clues: clues, isDraft: false)
         
     }
     

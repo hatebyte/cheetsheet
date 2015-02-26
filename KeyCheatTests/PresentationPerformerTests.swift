@@ -19,10 +19,10 @@ class PresentationPerformerTests: XCTestCase {
         
         var clues = [Clue]()
         for i in 0..<15 {
-            let c = Clue(time:10, data: "Clue number \(i)", performanceIndex:i)
+            let c = Clue(id:i, time:10, data: "Clue number \(i)", performanceIndex:i)
             clues += [c]
         }
-        let presentation = Presentation(clues: clues, isDraft: false)
+        let presentation = Presentation(id: 1, clues: clues, isDraft: false)
         self.presentationPerformer = MockPresentationPerformer(presentation: presentation)
         self.presentationPerformer.start()
         
