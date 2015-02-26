@@ -1,1 +1,0 @@
-../../../CYCoreData/Classes/NSManagedObject+CYCoreData.h
