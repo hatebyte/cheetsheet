@@ -16,7 +16,16 @@ class PerformanceCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        self.userInteractionEnabled = false
     }
 
+    override var selected:Bool {
+        willSet {
+            if newValue == true {
+                clueLB!.backgroundColor = UIColor.redColor()
+            } else {
+                clueLB!.backgroundColor = UIColor.clearColor()
+            }
+        }
+    }
 }

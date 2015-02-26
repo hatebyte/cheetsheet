@@ -32,7 +32,7 @@
             <connections>
                 <outlet property="clueLB" destination="d3E-jG-jJj" id="wYW-RQ-bgL"/>
             </connections>
-            <point key="canvasLocation" x="-311.5" y="-128"/>
+            <point key="canvasLocation" x="-471.5" y="-65"/>
         </collectionViewCell>
     </objects>
 </document>

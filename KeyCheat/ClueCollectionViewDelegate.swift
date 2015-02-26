@@ -35,9 +35,9 @@ class ClueCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollec
     }
     
 //    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        if let dsc = didSelectCell {
-//            dsc(indexPath.row)
-//        }
+//        println(indexPath)
+//        var cell:PerformanceCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath) as PerformanceCollectionViewCell
+//        cell.selected = true
 //    }
     
     func collectionView(collectionView: UICollectionView!,

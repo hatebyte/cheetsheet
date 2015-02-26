@@ -22,7 +22,7 @@ class PresentationPerformer {
     
     internal var presentation:Presentation!
     internal var clueCoundownClock:ClueCountdownClock!
-    internal var currentClueIndex:Int!
+    internal var clueIndex:Int              = 0
     
     var performanceData:PerformanceData?
     var performanceUpdator:PerformanceUpdator?
@@ -33,7 +33,6 @@ class PresentationPerformer {
     
     init(presentation:Presentation) {
         self.presentation                   = presentation
-        self.currentClueIndex               = 0
         self.totalTime                      = presentation.totalTime()
         clueCoundownClock                   = createClue()
         clueCoundownClock.updator           = clueCountDownUpdate
@@ -42,12 +41,10 @@ class PresentationPerformer {
         viewPresenter.tt                    = presentation.totalTime()
         formatData()
         
+        // SO THAT THE FIRST TIMER SHOW A FAMILAR DIGIT
         var pd                              = viewPresenter.performanceData!
         pd.remainingClueTime                = pd.remainingClueTime + 1
         viewPresenter.performanceData       = pd
-        if let d = delegate {
-            clueCountDownUpdate()
-        }
     }
     
     var isPaused:Bool {
@@ -60,10 +57,23 @@ class PresentationPerformer {
         }
     }
     
+    var currentClueIndex:Int {
+        get {
+            return clueIndex
+        }
+        set (newValue) {
+            clueIndex                    = newValue
+            updateForClueIndex()
+        }
+    }
+    
     // MARK: public
     func start() {
         if let cc = clueCoundownClock {
             cc.start()
+            if let d = delegate {
+                d.clueStarted(viewPresenter!)
+            }
         }
     }
     
@@ -79,39 +89,31 @@ class PresentationPerformer {
         }
     }
     
-    func setCurrentClue(index:Int) {
-        currentClueIndex                    = index
+    func cancel() {
+        clueCoundownClock.pause()
+        clueCoundownClock = nil
+    }
+    
+    private func updateForClueIndex() {
         pause()
         clueCoundownClock                   = createClue()
         clueCoundownClock.updator           = clueCountDownUpdate
         clueCoundownClock.finisher          = clueCountDownFinisher
         start()
-        let clue                            = presentation.clues[currentClueIndex]
-        let finishedCluesTotalTime          = presentation.totalTimeLeft(currentClueIndex)
-        let remainingClueTime               = clueCoundownClock.remainingTime
         
         formatData()
         if let d = delegate {
             d.clueStarted(viewPresenter)
         }
     }
-    
-    func cancel() {
-        clueCoundownClock.pause()
-        clueCoundownClock = nil
-    }
-    
-    func refreshData() {
 
-    }
-   
     internal func formatData() {
-        let clue                            = presentation.clues[currentClueIndex]
-        let finishedCluesTotalTime          = presentation.totalTimeLeft(currentClueIndex)
+        let clue                            = presentation.clues[clueIndex]
+        let finishedCluesTotalTime          = presentation.totalTimeLeft(clueIndex)
         let remainingClueTime               = clueCoundownClock.remainingTime
 
         performanceData                     = PerformanceData(
-            clueIndex:currentClueIndex,
+            clueIndex:clueIndex,
             clueData:clue.data,
             remainingClueTime:remainingClueTime,
             remainingPerformanceTime:remainingClueTime + finishedCluesTotalTime
@@ -120,7 +122,7 @@ class PresentationPerformer {
     }
     
     internal func createClue()->ClueCountdownClock {
-        return ClueCountdownClock(clue: presentation.clues[currentClueIndex]);
+        return ClueCountdownClock(clue: presentation.clues[clueIndex]);
     }
     
     // MARK: closures
@@ -137,11 +139,10 @@ class PresentationPerformer {
             clueCountDownUpdate()
         }
         if currentClueIndex < presentation.clues.count-1 {
-            setCurrentClue(currentClueIndex+1)
-
             if let d = delegate {
                 d.clueCompleted(viewPresenter!)
             }
+            currentClueIndex                = currentClueIndex+1
         } else {
             clueCoundownClock.pause()
             if let d = delegate {

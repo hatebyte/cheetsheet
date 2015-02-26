@@ -40,7 +40,7 @@ class PresentationPerformerTests: XCTestCase {
     
     func testPresentationStartIsClue0() {
         XCTAssert(self.presentationPerformer.currentClueIndex == 0, "The presentationPerformacne clueIndex should be 0")
-        XCTAssert(self.presentationPerformer.currentClueCountdownClock.clue.data == "Clue number 0", "The presentationPerformacne currentClue be 'Clue number 0'")
+        XCTAssert(self.presentationPerformer.currentClueCountdownClock!.clue.data == "Clue number 0", "The presentationPerformacne currentClue be 'Clue number 0'")
     }
    
     func testPresentationDataStart() {
@@ -52,7 +52,7 @@ class PresentationPerformerTests: XCTestCase {
     }
 
     func testPresentationDataAfterFirstTimerExecutes() {
-        self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+        self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 0", "The pvm clueData should be 'Clue number 0'")
@@ -62,8 +62,8 @@ class PresentationPerformerTests: XCTestCase {
     }
     
     func testPresentationDataAfterSecondTimerExecutes() {
-        self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
-        self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+        self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
+        self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         
         let pvm = presentationPerformer.performanceData!
         XCTAssert(pvm.clueData == "Clue number 0", "The pvm clueData should be 'Clue number 0'")
@@ -74,7 +74,7 @@ class PresentationPerformerTests: XCTestCase {
    
     func testPresentationDataAfter9TimersExecute() {
         for _ in 0..<9 {
-            self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+            self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         }
         
         let pvm = presentationPerformer.performanceData!
@@ -86,7 +86,7 @@ class PresentationPerformerTests: XCTestCase {
     
     func testPresentationDataAfterTenTimersExecute() {
         for _ in 0..<10 {
-            self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+            self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         }
         
         let pvm = presentationPerformer.performanceData!
@@ -98,7 +98,7 @@ class PresentationPerformerTests: XCTestCase {
     
     func testPresentationDataAfterElevenTimersExecute() {
         for _ in 0..<11 {
-            self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+            self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         }
         
         let pvm = presentationPerformer.performanceData!
@@ -110,7 +110,7 @@ class PresentationPerformerTests: XCTestCase {
     
     func testPresentationDataAfter149TimersExecute() {
         for _ in 0..<149 {
-            self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+            self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         }
         
         let pvm = presentationPerformer.performanceData!
@@ -122,7 +122,7 @@ class PresentationPerformerTests: XCTestCase {
 
     func testPresentationDataAfter150TimersExecute() {
         for _ in 0..<150 {
-            self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+            self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         }
         
         let pvm = presentationPerformer.performanceData!
@@ -137,7 +137,7 @@ class PresentationPerformerTests: XCTestCase {
     
     func testPresentationDataAfterTooManyTimersExecute() {
         for _ in 0..<1000 {
-            self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+            self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         }
         
         let pvm = presentationPerformer.performanceData!
@@ -154,11 +154,11 @@ class PresentationPerformerTests: XCTestCase {
         // start presentation
     
         for _ in 0..<3 {
-            self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+            self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         }
         
-        self.presentationPerformer.setCurrentClue(10)
-        self.presentationPerformer.currentClueCountdownClock.triggerUpdate()
+        self.presentationPerformer.currentClueIndex = 10
+        self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
         let pvm = presentationPerformer.performanceData!
         
         XCTAssert(pvm.clueData == "Clue number 10", "The pvm clueData should be 'Clue number 10'")
@@ -168,6 +168,19 @@ class PresentationPerformerTests: XCTestCase {
         XCTAssert(fakeDelegate.newClueIndex == 10, "The presentation should be at clue 10")
     }
 
+    func testPerformanceDestroysWhenCancelled() {
+        for _ in 0..<3 {
+            self.presentationPerformer.currentClueCountdownClock!.triggerUpdate()
+        }
+        self.presentationPerformer.cancel()
+
+        if let cc = self.presentationPerformer.currentClueCountdownClock {
+            XCTAssert(false, "The performers countdown clock should be nil")
+        } else {
+            XCTAssert(true, "The performers countdown clock should be nil")
+        }
+    }
+    
 
 }
 

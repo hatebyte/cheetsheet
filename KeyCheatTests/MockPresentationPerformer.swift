@@ -10,14 +10,14 @@ import Foundation
 
 class MockPresentationPerformer: PresentationPerformer {
     
-    var currentClueCountdownClock:MockClueCountdownClock {
+    var currentClueCountdownClock:MockClueCountdownClock? {
         get {
-            return self.clueCoundownClock as MockClueCountdownClock
+            return self.clueCoundownClock as MockClueCountdownClock?
         }
     }
 
     override func start() {
-        currentClueCountdownClock.falseStart()
+        currentClueCountdownClock!.falseStart()
         clueCountDownUpdate()
     }
     

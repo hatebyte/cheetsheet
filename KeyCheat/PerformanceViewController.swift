@@ -34,9 +34,11 @@ class PerformanceViewController: UIViewController, PresentationPerformerDelegate
         super.viewDidLoad()
 
         var clues                               = [Clue]()
-        for i in 0..<5 {
-            var t:Int                           = random() % 20 + 10
-            let c                               = Clue(time:t, data: "Clue number \(i)", performanceIndex:i)
+        var c:Int                               = random() % 8 + 4
+
+        for i in 0...c {
+            var t:Int                           = random() % 6 + 3
+            let c                               = Clue(time:t, data: "Clue number \(i+1)", performanceIndex:i)
             clues += [c]
         }
         let presentation                        = Presentation(clues: clues, isDraft: false)
@@ -50,7 +52,6 @@ class PerformanceViewController: UIViewController, PresentationPerformerDelegate
         clueCollectionView!.registerNib(UINib(nibName: "PerformanceCollectionViewCell", bundle:nil), forCellWithReuseIdentifier:PerformanceCollectionViewCell.ReuseIdentifier)
         clueCollectionView!.delegate            = clueCollectionViewDelegate
         clueCollectionView!.dataSource          = clueCollectionViewDelegate
-        clueCollectionViewDelegate.didSelectCell = self.didSelectCell
         let flowLayout                          = clueCollectionView!.collectionViewLayout as UICollectionViewFlowLayout
         flowLayout.minimumLineSpacing           = 0.0;
  
@@ -69,12 +70,6 @@ class PerformanceViewController: UIViewController, PresentationPerformerDelegate
         clueCollectionView!.addGestureRecognizer(tapSingleGesture)
     }
     
-    var currentPage:Int {
-        get {
-            return Int(abs(clueCollectionView!.contentOffset.x / clueCollectionView!.bounds.size.width))
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,60 +84,67 @@ class PerformanceViewController: UIViewController, PresentationPerformerDelegate
         super.viewDidAppear(animated)
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
-            self.presentationPerformer.start()
+            if let p = self.presentationPerformer {
+                p.start()
+            }
         }
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
+        self.presentationPerformer = nil
         self.removeEventHandlers()
     }
     
-    // MARK: ADD/REMOVE handles
-    func didSelectCell(index:Int) {
-        self.presentationPerformer.setCurrentClue(index)
+    //MARK: Private
+    private var currentPage:Int {
+        get {
+            return Int(abs(clueCollectionView!.contentOffset.x / clueCollectionView!.bounds.size.width))
+        }
     }
     
-    func addEventHandlers() {
-        self.cancelBT?.addTarget(self, action: "cancel", forControlEvents: UIControlEvents.TouchUpInside)
-//        self.editClueBT?.addTarget(self, action: "edit", forControlEvents: UIControlEvents.TouchUpInside)
+    private func sendToCompletedScreen() {
+        let completedViewController = CompletedViewController()
+        self.navigationController?.pushViewController(completedViewController, animated: true)
     }
     
-    func removeEventHandlers() {
-        self.cancelBT?.removeTarget(self, action: "cancel", forControlEvents: UIControlEvents.TouchUpInside)
-//        self.editClueBT?.removeTarget(self, action: "edit", forControlEvents: UIControlEvents.TouchUpInside)
+    private func addEventHandlers() {
+        self.cancelBT?.addTarget(self, action: "cancel:", forControlEvents: UIControlEvents.TouchUpInside)
+
+    }
+    
+    private func removeEventHandlers() {
+        self.cancelBT?.removeTarget(self, action: "cancel:", forControlEvents: UIControlEvents.TouchUpInside)
+
     }
     
     // MARK: Gesture/Tap Handlers
     func doubleTappedClue(sender: AnyObject) {
-        self.presentationPerformer.setCurrentClue(currentPage)
+        self.presentationPerformer.currentClueIndex = currentPage
     }
     
     func singleTappedClue(sender: AnyObject) {
-        if presentationPerformer.isPaused == true {
-            presentationPerformer.resume()
-        } else {
-            presentationPerformer.pause()
+        if self.presentationPerformer.currentClueIndex == currentPage {
+            if presentationPerformer.isPaused == true {
+                presentationPerformer.resume()
+            } else {
+                presentationPerformer.pause()
+            }
         }
     }
     
-    func cancel() {
+    func cancel(sender:UIButton) {
         self.presentationPerformer.cancel()
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
-    func edit() {
-        
-    }
-    
-    func editPresentation() {
-    
-    }
-    
-    func editStep() {
-        // inform navigator of edit Step (currentClueIndex)
-        
-    }
+//    func editPresentation() {
+//    
+//    }
+//    
+//    func editStep() {
+//
+//    }
     
     //MARK: PresentationPerformerDelegate
     func update(performancePresenter:PerformanceViewPresenter) {
@@ -151,6 +153,9 @@ class PerformanceViewController: UIViewController, PresentationPerformerDelegate
     }
     
     func clueStarted(performancePresenter:PerformanceViewPresenter) {
+        clueTimeLB!.text                        = performancePresenter.remainingClueTime
+        totalTimeLB!.text                       = performancePresenter.remainingPerformanceTime
+        clueCollectionView!.selectItemAtIndexPath(NSIndexPath(forRow:performancePresenter.index, inSection: 0), animated:true, scrollPosition: UICollectionViewScrollPosition.Left)
         if performancePresenter.index != currentPage {
             clueCollectionView!.scrollToItemAtIndexPath(NSIndexPath(forRow:performancePresenter.index, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.Left, animated: true)
         }
@@ -159,7 +164,6 @@ class PerformanceViewController: UIViewController, PresentationPerformerDelegate
     func clueCompleted(performancePresenter:PerformanceViewPresenter) {
         clueTimeLB!.text                        = performancePresenter.remainingClueTime
         totalTimeLB!.text                       = performancePresenter.remainingPerformanceTime
-      
         clueCollectionView!.scrollToItemAtIndexPath(NSIndexPath(forRow:performancePresenter.index, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.Left, animated: true)
     }
     
@@ -172,9 +176,5 @@ class PerformanceViewController: UIViewController, PresentationPerformerDelegate
            self.sendToCompletedScreen()
         }
     }
-    
-    func sendToCompletedScreen() {
-        let completedViewController = CompletedViewController()
-        self.navigationController?.pushViewController(completedViewController, animated: true)
-    }
+   
 }
