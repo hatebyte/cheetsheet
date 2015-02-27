@@ -10,15 +10,15 @@ import Foundation
 
 struct Clue {
     let id:Int
-    let time:Int
-    let data:String
+    var time:Int
+    var data:String
     let performanceIndex:Int
 }
 
 struct Presentation {
     let id:Int
-    let clues:[Clue]
-    let isDraft:Bool
+    var clues:[Clue]
+    var isDraft:Bool
 }
 
 
